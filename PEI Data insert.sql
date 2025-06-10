@@ -1,0 +1,1785 @@
+DROP TABLE IF EXISTS customer;
+
+CREATE TEMP TABLE customer (
+    customer_id INT PRIMARY KEY,
+    first VARCHAR(50) NOT NULL,
+    last VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    country_code CHAR(3) NOT NULL
+);
+
+INSERT INTO customer (customer_id, first, last, age, country_code)
+VALUES
+(1,'Joseph','Rice',43,'USA'),
+(2,'Gary','Moore',71,'USA'),
+(3,'John','Walker',44,'UK'),
+(4,'Eric','Carter',38,'UK'),
+(5,'William','Jackson',58,'UAE'),
+(6,'N!cole','Jones',33,'USA'),
+(7,'David','Davis',59,'USA'),
+(8,'Jason','Montgomery',58,'UK'),
+(9,'Kent','Weaver',61,'UK'),
+(10,'Darrell','Dillon',50,'UAE'),
+(11,'Jacqueline','Wang',22,'USA'),
+(12,'Jodi','Gonzalez',69,'USA'),
+(13,'Omar','Martin',28,'UK'),
+(14,'N!cole','Lara',77,'UK'),
+(15,'Jason','Brown',63,'UAE'),
+(16,'David','Benson',61,'USA'),
+(17,'Kimberly','Mora',34,'USA'),
+(18,'Erik','Macias',25,'UK'),
+(19,'James','Johnson',67,'UK'),
+(20,'Derek','Peterson',36,'UAE'),
+(21,'Diane','Henson',74,'USA'),
+(22,'Cody','Lyons',47,'USA'),
+(23,'Margaret','Hardy',25,'UK'),
+(24,'Arthur','Hayes',75,'UK'),
+(25,'Raymond','Taylor',36,'UAE'),
+(26,'Tina','Moore',34,'USA'),
+(27,'Kylie','White',63,'USA'),
+(28,'Jonathan','Manning',30,'UK'),
+(29,'Angela','Bryant',23,'UK'),
+(30,'Michael','Mann',56,'UAE'),
+(31,'Craig','Myers',42,'USA'),
+(32,'Tiffany','Carter',26,'USA'),
+(33,'Erica','Owens',22,'UK'),
+(34,'Patricia','Parker',28,'UK'),
+(35,'Brian','Palmer',75,'UAE'),
+(36,'Melissa','Smith',75,'USA'),
+(37,'Connor','Adams',21,'USA'),
+(38,'Michael','Williams',40,'UK'),
+(39,'Ruth','Smith',50,'UK'),
+(40,'Jonathan','Middleton',79,'UAE'),
+(41,'Francis','Velez',25,'USA'),
+(42,'Matthew','Velez',71,'USA'),
+(43,'Kim','Shaw',39,'UK'),
+(44,'Gary','Jones',40,'UK'),
+(45,'Nicholas','Clayton',25,'UAE'),
+(46,'Anthony','Chavez',36,'USA'),
+(47,'Carolyn','Green',31,'USA'),
+(48,'Janice','Roman',78,'UK'),
+(49,'Erin','Taylor',54,'UK'),
+(50,'Charles','Garcia',24,'UAE'),
+(51,'John','Huber',51,'USA'),
+(52,'Haley','Martinez',75,'USA'),
+(53,'Adam','Holmes',41,'UK'),
+(54,'Patricia','Jones',46,'UK'),
+(55,'Christy','Rodriguez',23,'UAE'),
+(56,'Jose','Poole',60,'USA'),
+(57,'Lacey','Mercado',29,'USA'),
+(58,'Danielle','Garcia',68,'UK'),
+(59,'Amanda','Cohen',72,'UK'),
+(60,'Jeremy','Rodriguez',28,'UAE'),
+(61,'Jade','Wall',51,'USA'),
+(62,'Janice','Garcia',28,'USA'),
+(63,'Sarah','Greer',49,'UK'),
+(64,'Sandra','Golden',42,'UK'),
+(65,'David','Fritz',47,'UAE'),
+(66,'Hannah','Wu',59,'USA'),
+(67,'Guy','Bennett',44,'USA'),
+(68,'Regina','Wong',64,'UK'),
+(69,'Desiree','Webster',38,'UK'),
+(70,'Juan','Cruz',21,'UAE'),
+(71,'Michelle','Edwards',77,'USA'),
+(72,'Alexander','Griffin',76,'USA'),
+(73,'Laura','House',78,'UK'),
+(74,'Brittany','Hanna',32,'UK'),
+(75,'Allen','Wright',49,'UAE'),
+(76,'Ricky','Phillips',49,'USA'),
+(77,'Adrian','Cross',27,'USA'),
+(78,'Thomas','Wood',33,'UK'),
+(79,'Jillian','Massey',76,'UK'),
+(80,'Kevin','Watkins',53,'UAE'),
+(81,'Allison','Sweeney',75,'USA'),
+(82,'Joseph','Hernandez',41,'USA'),
+(83,'Steven','Little',69,'UK'),
+(84,'John','Bennett',32,'UK'),
+(85,'Michele','Maxwell',80,'UAE'),
+(86,'Emily','Thomas',74,'USA'),
+(87,'Mark','Rogers',22,'USA'),
+(88,'John','Cruz',76,'UK'),
+(89,'David','Yoder',79,'UK'),
+(90,'James','Reynolds',29,'UAE'),
+(91,'Stephanie','Hicks',53,'USA'),
+(92,'Paul','Brown',78,'USA'),
+(93,'Alexandra','Morales',73,'UK'),
+(94,'Krystal','Carroll',43,'UK'),
+(95,'Alyssa','Walker',35,'UAE'),
+(96,'Eric','Harvey',52,'USA'),
+(97,'Debbie','Rogers',76,'USA'),
+(98,'Steve','Braun',72,'UK'),
+(99,'Ryan','Rojas',51,'UK'),
+(100,'Andrew','Levine',67,'UAE'),
+(101,'Brian','Olson',38,'USA'),
+(102,'Jessica','Welch',28,'USA'),
+(103,'Stephanie','Faulkner',18,'UK'),
+(104,'Dawn','Johnson',77,'UK'),
+(105,'Monique','Wright',72,'UAE'),
+(106,'Veronica','Stein',18,'USA'),
+(107,'Breanna','Santos',26,'USA'),
+(108,'Jeremy','Lee',26,'UK'),
+(109,'R0bert','Moore',40,'UK'),
+(110,'Tiffany','Pearson',77,'UAE'),
+(111,'Audrey','Richardson',53,'USA'),
+(112,'Maureen','Bryant',64,'USA'),
+(113,'Derrick','R0berts',72,'UK'),
+(114,'Jeffrey','Sullivan',61,'UK'),
+(115,'Amy','Harris',25,'UAE'),
+(116,'Rhonda','Flores',52,'USA'),
+(117,'Steven','Black',41,'USA'),
+(118,'R0bert','Shepherd',28,'UK'),
+(119,'Robin','Snyder',19,'UK'),
+(120,'Elijah','Cook',80,'UAE'),
+(121,'Dennis','Hill',42,'USA'),
+(122,'Charles','Nunez',80,'USA'),
+(123,'Philip','Robinson',52,'UK'),
+(124,'Rachel','Larson',21,'UK'),
+(125,'Stephen','Sharp',35,'UAE'),
+(126,'Aimee','Jacobs',54,'USA'),
+(127,'Brittany','Miller',49,'USA'),
+(128,'Sabrina','Mclaughlin',50,'UK'),
+(129,'Amber','Banks',54,'UK'),
+(130,'Casey','Todd',62,'UAE'),
+(131,'Miranda','Williams',48,'USA'),
+(132,'Alexander','Williams',48,'USA'),
+(133,'Jesus','Higgins',57,'UK'),
+(134,'James','Keith',50,'UK'),
+(135,'Shawn','Johnson',18,'UAE'),
+(136,'Natalie','Page',75,'USA'),
+(137,'Zachary','Fowler',28,'USA'),
+(138,'Brian','Bowman',55,'UK'),
+(139,'Ryan','Martin',61,'UK'),
+(140,'Jennifer','Silva',45,'UAE'),
+(141,'Joseph','Sparks',66,'USA'),
+(142,'Mary','Bishop',60,'USA'),
+(143,'Stacey','Welch',46,'UK'),
+(144,'Brett','Burns',41,'UK'),
+(145,'Michael','Case',29,'UAE'),
+(146,'Terry','Bailey',68,'USA'),
+(147,'Christopher','Mcdonald',43,'USA'),
+(148,'Andres','Becker',31,'UK'),
+(149,'Chase','Mcdaniel',26,'UK'),
+(150,'Sherry','Parsons',52,'UAE'),
+(151,'Javier','Jones',80,'USA'),
+(152,'Jill','Kane',32,'USA'),
+(153,'Janet','Valdez',29,'UK'),
+(154,'Karen','Ford',33,'UK'),
+(155,'Jamie','Johnson',28,'UAE'),
+(156,'Jessica','Marshall',21,'USA'),
+(157,'Sharon','Warner',55,'USA'),
+(158,'Zachary','Williams',19,'UK'),
+(159,'Brooke','Durham',33,'UK'),
+(160,'Ryan','Murray',77,'UAE'),
+(161,'Gabrielle','Smith',44,'USA'),
+(162,'N!cole','Bennett',51,'USA'),
+(163,'Heather','Ali',75,'UK'),
+(164,'Sandra','Mcmahon',34,'UK'),
+(165,'Bailey','Mercado',42,'UAE'),
+(166,'Morgan','Cooper',18,'USA'),
+(167,'Matthew','Stokes',42,'USA'),
+(168,'Timothy','Mullins',51,'UK'),
+(169,'Kenneth','Rubio',74,'UK'),
+(170,'Mary','Zamora',62,'UAE'),
+(171,'L@rry','Cole',50,'USA'),
+(172,'Jeffrey','Diaz',69,'USA'),
+(173,'Joseph','Brown',29,'UK'),
+(174,'Emily','Jones',60,'UK'),
+(175,'Tara','Davis',80,'UAE'),
+(176,'Tiffany','Bowers',39,'USA'),
+(177,'Linda','Craig',25,'USA'),
+(178,'Christine','Smith',74,'UK'),
+(179,'Matthew','Williams',29,'UK'),
+(180,'Brenda','Lewis',21,'UAE'),
+(181,'Adrian','West',51,'USA'),
+(182,'Amy','Scott',28,'USA'),
+(183,'April','Beck',80,'UK'),
+(184,'Anthony','Nicholson',22,'UK'),
+(185,'Shari','Garcia',78,'UAE'),
+(186,'Xavier','Miles',45,'USA'),
+(187,'Rachael','Gilbert',42,'USA'),
+(188,'Michele','Rogers',48,'UK'),
+(189,'Derek','Dixon',33,'UK'),
+(190,'Grace','Hartman',26,'UAE'),
+(191,'Joseph','Miller',36,'USA'),
+(192,'David','Arnold',62,'USA'),
+(193,'Yesenia','White',25,'UK'),
+(194,'Nancy','Miller',65,'UK'),
+(195,'Christopher','Doyle',43,'UAE'),
+(196,'Taylor','Reed',74,'USA'),
+(197,'Katherine','Ferguson',41,'USA'),
+(198,'R0bert','Bryan',49,'UK'),
+(199,'Zachary','Kane',75,'UK'),
+(200,'Rebecca','Robinson',50,'UAE'),
+(201,'Bethany','Anderson',43,'USA'),
+(202,'Mary','Williams',22,'USA'),
+(203,'Carlos','Wallace',58,'UK'),
+(204,'Rhonda','Matthews',62,'UK'),
+(205,'Donald','Barker',39,'UAE'),
+(206,'Courtney','Lopez',66,'USA'),
+(207,'Chelsea','Moyer',20,'USA'),
+(208,'Brittany','Golden',24,'UK'),
+(209,'Russell','Berry',25,'UK'),
+(210,'Joshua','Jackson',57,'UAE'),
+(211,'Al1cia','Thompson',38,'USA'),
+(212,'Clifford','Gray',23,'USA'),
+(213,'Gloria','Miller',68,'UK'),
+(214,'N!cole','Mcintyre',18,'UK'),
+(215,'Vincent','Kline',57,'UAE'),
+(216,'Amber','Hunter',78,'USA'),
+(217,'Shelby','Gomez',28,'USA'),
+(218,'Thomas','Mclaughlin',29,'UK'),
+(219,'Nathan','Graham',47,'UK'),
+(220,'Thomas','Guzman',69,'UAE'),
+(221,'Sarah','Gilbert',56,'USA'),
+(222,'Jeremy','Andrews',24,'USA'),
+(223,'Megan','Morris',41,'UK'),
+(224,'Zachary','Davis',25,'UK'),
+(225,'Michael','Phelps',72,'UAE'),
+(226,'Christopher','Robinson',23,'USA'),
+(227,'Aaron','Mckee',37,'USA'),
+(228,'Andrea','Velasquez',55,'UK'),
+(229,'Philip','Newton',74,'UK'),
+(230,'Kathleen','Palmer',64,'UAE'),
+(231,'Eric','Levine',25,'USA'),
+(232,'Michael','Lopez',47,'USA'),
+(233,'Samantha','Smith',28,'UK'),
+(234,'Diane','Tanner',79,'UK'),
+(235,'Melissa','Gaines',25,'UAE'),
+(236,'Al1cia','Jensen',19,'USA'),
+(237,'Donna','Bird',63,'USA'),
+(238,'Kyle','Ruiz',48,'UK'),
+(239,'Janet','Holmes',36,'UK'),
+(240,'Edward','Bray',32,'UAE'),
+(241,'Brenda','Hines',44,'USA'),
+(242,'Mark','R0berts',61,'USA'),
+(243,'Alejandro','Bailey',73,'UK'),
+(244,'Mark','Rivers',38,'UK'),
+(245,'Christopher','Miles',30,'UAE'),
+(246,'Justin','Stewart',73,'USA'),
+(247,'John','Miller',53,'USA'),
+(248,'Thomas','Hickman',23,'UK'),
+(249,'Patricia','Garcia',19,'UK'),
+(250,'Stephen','Jones',22,'USA');
+
+DROP TABLE IF EXISTS orders;
+
+CREATE TEMP TABLE orders (
+    order_id INT PRIMARY KEY,
+    item VARCHAR(50) NOT NULL,
+    amount INT NOT NULL,
+    customer_id INT NOT NULL
+);
+
+INSERT INTO orders (order_id,item,amount,customer_id)
+VALUES
+(1,'Keyboard',400,139),
+(2,'Mouse',300,250),
+(3,'Monitor',12000,239),
+(4,'Keyboard',400,153),
+(5,'Mousepad',250,153),
+(6,'Harddisk',5000,164),
+(7,'Webcam',350,124),
+(8,'Mousepad',200,98),
+(9,'DDR RAM',1500,119),
+(10,'Headset',900,159),
+(11,'Keyboard',400,167),
+(12,'Mouse',300,157),
+(13,'Monitor',12000,49),
+(14,'Keyboard',400,234),
+(15,'Mousepad',250,202),
+(16,'Harddisk',5000,181),
+(17,'Webcam',350,15),
+(18,'Mousepad',200,177),
+(19,'DDR RAM',1500,5),
+(20,'Headset',900,225),
+(21,'Keyboard',400,171),
+(22,'Mouse',300,67),
+(23,'Monitor',12000,68),
+(24,'Keyboard',400,86),
+(25,'Mousepad',250,8),
+(26,'Harddisk',5000,56),
+(27,'Webcam',350,60),
+(28,'Mousepad',200,188),
+(29,'DDR RAM',1500,33),
+(30,'Headset',900,157),
+(31,'Keyboard',400,87),
+(32,'Mouse',300,174),
+(33,'Monitor',12000,158),
+(34,'Keyboard',400,134),
+(35,'Mousepad',250,209),
+(36,'Harddisk',5000,52),
+(37,'Webcam',350,92),
+(38,'Mousepad',200,105),
+(39,'DDR RAM',1500,99),
+(40,'Headset',900,249),
+(41,'Keyboard',400,200),
+(42,'Mouse',300,180),
+(43,'Monitor',12000,61),
+(44,'Keyboard',400,126),
+(45,'Mousepad',250,172),
+(46,'Harddisk',5000,81),
+(47,'Webcam',350,78),
+(48,'Mousepad',200,222),
+(49,'DDR RAM',1500,194),
+(50,'Headset',900,150),
+(51,'Keyboard',400,146),
+(52,'Mouse',300,192),
+(53,'Monitor',12000,193),
+(54,'Keyboard',400,24),
+(55,'Mousepad',250,125),
+(56,'Harddisk',5000,228),
+(57,'Webcam',350,101),
+(58,'Mousepad',200,64),
+(59,'DDR RAM',1500,164),
+(60,'Headset',900,244),
+(61,'Keyboard',400,118),
+(62,'Mouse',300,96),
+(63,'Monitor',12000,221),
+(64,'Keyboard',400,190),
+(65,'Mousepad',250,198),
+(66,'Harddisk',5000,30),
+(67,'Webcam',350,201),
+(68,'Mousepad',200,144),
+(69,'DDR RAM',1500,136),
+(70,'Headset',900,50),
+(71,'Keyboard',400,70),
+(72,'Mouse',300,89),
+(73,'Monitor',12000,151),
+(74,'Keyboard',400,112),
+(75,'Mousepad',250,70),
+(76,'Harddisk',5000,38),
+(77,'Webcam',350,87),
+(78,'Mousepad',200,211),
+(79,'DDR RAM',1500,249),
+(80,'Headset',900,238),
+(81,'Keyboard',400,247),
+(82,'Mouse',300,156),
+(83,'Monitor',12000,129),
+(84,'Keyboard',400,39),
+(85,'Mousepad',250,193),
+(86,'Harddisk',5000,124),
+(87,'Webcam',350,108),
+(88,'Mousepad',200,91),
+(89,'DDR RAM',1500,193),
+(90,'Headset',900,161),
+(91,'Keyboard',400,99),
+(92,'Mouse',300,145),
+(93,'Monitor',12000,229),
+(94,'Keyboard',400,80),
+(95,'Mousepad',250,172),
+(96,'Harddisk',5000,129),
+(97,'Webcam',350,163),
+(98,'Mousepad',200,195),
+(99,'DDR RAM',1500,86),
+(100,'Headset',900,231),
+(101,'Keyboard',400,226),
+(102,'Mouse',300,68),
+(103,'Monitor',12000,242),
+(104,'Keyboard',400,53),
+(105,'Mousepad',250,107),
+(106,'Harddisk',5000,119),
+(107,'Webcam',350,17),
+(108,'Mousepad',200,152),
+(109,'DDR RAM',1500,8),
+(110,'Headset',900,32),
+(111,'Keyboard',400,243),
+(112,'Mouse',300,143),
+(113,'Monitor',12000,167),
+(114,'Keyboard',400,69),
+(115,'Mousepad',250,186),
+(116,'Harddisk',5000,75),
+(117,'Webcam',350,8),
+(118,'Mousepad',200,4),
+(119,'DDR RAM',1500,184),
+(120,'Headset',900,96),
+(121,'Keyboard',400,35),
+(122,'Mouse',300,73),
+(123,'Monitor',12000,131),
+(124,'Keyboard',400,151),
+(125,'Mousepad',250,249),
+(126,'Harddisk',5000,47),
+(127,'Webcam',350,60),
+(128,'Mousepad',200,191),
+(129,'DDR RAM',1500,107),
+(130,'Headset',900,13),
+(131,'Keyboard',400,70),
+(132,'Mouse',300,183),
+(133,'Monitor',12000,98),
+(134,'Keyboard',400,23),
+(135,'Mousepad',250,95),
+(136,'Harddisk',5000,123),
+(137,'Webcam',350,103),
+(138,'Mousepad',200,63),
+(139,'DDR RAM',1500,96),
+(140,'Headset',900,138),
+(141,'Keyboard',400,59),
+(142,'Mouse',300,84),
+(143,'Monitor',12000,143),
+(144,'Keyboard',400,10),
+(145,'Mousepad',250,53),
+(146,'Harddisk',5000,247),
+(147,'Webcam',350,232),
+(148,'Mousepad',200,229),
+(149,'DDR RAM',1500,20),
+(150,'Headset',900,89),
+(151,'Keyboard',400,208),
+(152,'Mouse',300,47),
+(153,'Monitor',12000,23),
+(154,'Keyboard',400,114),
+(155,'Mousepad',250,247),
+(156,'Harddisk',5000,71),
+(157,'Webcam',350,101),
+(158,'Mousepad',200,8),
+(159,'DDR RAM',1500,172),
+(160,'Headset',900,246),
+(161,'Keyboard',400,89),
+(162,'Mouse',300,134),
+(163,'Monitor',12000,166),
+(164,'Keyboard',400,85),
+(165,'Mousepad',250,221),
+(166,'Harddisk',5000,12),
+(167,'Webcam',350,143),
+(168,'Mousepad',200,193),
+(169,'DDR RAM',1500,236),
+(170,'Headset',900,214),
+(171,'Keyboard',400,55),
+(172,'Mouse',300,122),
+(173,'Monitor',12000,13),
+(174,'Keyboard',400,181),
+(175,'Mousepad',250,203),
+(176,'Harddisk',5000,159),
+(177,'Webcam',350,63),
+(178,'Mousepad',200,94),
+(179,'DDR RAM',1500,67),
+(180,'Headset',900,86),
+(181,'Keyboard',400,23),
+(182,'Mouse',300,97),
+(183,'Monitor',12000,55),
+(184,'Keyboard',400,146),
+(185,'Mousepad',250,66),
+(186,'Harddisk',5000,166),
+(187,'Webcam',350,117),
+(188,'Mousepad',200,249),
+(189,'DDR RAM',1500,195),
+(190,'Headset',900,197),
+(191,'Keyboard',400,70),
+(192,'Mouse',300,218),
+(193,'Monitor',12000,92),
+(194,'Keyboard',400,235),
+(195,'Mousepad',250,24),
+(196,'Harddisk',5000,196),
+(197,'Webcam',350,166),
+(198,'Mousepad',200,57),
+(199,'DDR RAM',1500,229),
+(200,'Headset',900,178),
+(201,'Keyboard',400,109),
+(202,'Mouse',300,98),
+(203,'Monitor',12000,207),
+(204,'Keyboard',400,28),
+(205,'Mousepad',250,208),
+(206,'Harddisk',5000,57),
+(207,'Webcam',350,235),
+(208,'Mousepad',200,29),
+(209,'DDR RAM',1500,40),
+(210,'Headset',900,106),
+(211,'Keyboard',400,239),
+(212,'Mouse',300,103),
+(213,'Monitor',12000,118),
+(214,'Keyboard',400,92),
+(215,'Mousepad',250,176),
+(216,'Harddisk',5000,85),
+(217,'Webcam',350,78),
+(218,'Mousepad',200,151),
+(219,'DDR RAM',1500,97),
+(220,'Headset',900,223),
+(221,'Keyboard',400,198),
+(222,'Mouse',300,238),
+(223,'Monitor',12000,96),
+(224,'Keyboard',400,221),
+(225,'Mousepad',250,113),
+(226,'Harddisk',5000,65),
+(227,'Webcam',350,134),
+(228,'Mousepad',200,153),
+(229,'DDR RAM',1500,57),
+(230,'Headset',900,111),
+(231,'Keyboard',400,162),
+(232,'Mouse',300,190),
+(233,'Monitor',12000,206),
+(234,'Keyboard',400,13),
+(235,'Mousepad',250,37),
+(236,'Harddisk',5000,102),
+(237,'Webcam',350,157),
+(238,'Mousepad',200,200),
+(239,'DDR RAM',1500,223),
+(240,'Headset',900,101),
+(241,'Keyboard',400,224),
+(242,'Mouse',300,63),
+(243,'Monitor',12000,123),
+(244,'Keyboard',400,215),
+(245,'Mousepad',250,50),
+(246,'Harddisk',5000,186),
+(247,'Webcam',350,135),
+(248,'Mousepad',200,110),
+(249,'DDR RAM',1500,176),
+(250,'Headset',900,223);
+
+DROP TABLE IF EXISTS shipping;
+
+CREATE TEMP TABLE shipping (
+    shipping_id INT PRIMARY KEY,
+    status VARCHAR(50) NOT NULL,
+    customer_id INT NOT NULL
+);
+
+INSERT INTO shipping (shipping_id,status,customer_id)
+VALUES
+(
+   1,
+  'Pending',
+  173
+),
+(
+   2,
+  'Pending',
+  155
+),
+(
+   3,
+  'Delivered',
+  242
+),
+(
+   4,
+  'Pending',
+  223
+),
+(
+   5,
+  'Delivered',
+  72
+),
+(
+   6,
+  'Pending',
+  29
+),
+(
+   7,
+  'Pending',
+  236
+),
+(
+   8,
+  'Delivered',
+  193
+),
+(
+   9,
+  'Pending',
+  199
+),
+(
+   10,
+  'Delivered',
+  17
+),
+(
+   11,
+  'Pending',
+  157
+),
+(
+   12,
+  'Pending',
+  37
+),
+(
+   13,
+  'Delivered',
+  141
+),
+(
+   14,
+  'Pending',
+  155
+),
+(
+   15,
+  'Delivered',
+  131
+),
+(
+   16,
+  'Pending',
+  24
+),
+(
+   17,
+  'Pending',
+  186
+),
+(
+   18,
+  'Delivered',
+  177
+),
+(
+   19,
+  'Pending',
+  129
+),
+(
+   20,
+  'Delivered',
+  6
+),
+(
+   21,
+  'Pending',
+  193
+),
+(
+   22,
+  'Pending',
+  109
+),
+(
+   23,
+  'Delivered',
+  232
+),
+(
+   24,
+  'Pending',
+  145
+),
+(
+   25,
+  'Delivered',
+  2
+),
+(
+   26,
+  'Pending',
+  113
+),
+(
+   27,
+  'Pending',
+  58
+),
+(
+   28,
+  'Delivered',
+  93
+),
+(
+   29,
+  'Pending',
+  182
+),
+(
+   30,
+  'Delivered',
+  205
+),
+(
+   31,
+  'Pending',
+  161
+),
+(
+   32,
+  'Pending',
+  42
+),
+(
+   33,
+  'Delivered',
+  190
+),
+(
+   34,
+  'Pending',
+  83
+),
+(
+   35,
+  'Delivered',
+  37
+),
+(
+   36,
+  'Pending',
+  165
+),
+(
+   37,
+  'Pending',
+  137
+),
+(
+   38,
+  'Delivered',
+  245
+),
+(
+   39,
+  'Pending',
+  54
+),
+(
+   40,
+  'Delivered',
+  11
+),
+(
+   41,
+  'Pending',
+  111
+),
+(
+   42,
+  'Pending',
+  74
+),
+(
+   43,
+  'Delivered',
+  12
+),
+(
+   44,
+  'Pending',
+  244
+),
+(
+   45,
+  'Delivered',
+  67
+),
+(
+   46,
+  'Pending',
+  71
+),
+(
+   47,
+  'Pending',
+  185
+),
+(
+   48,
+  'Delivered',
+  175
+),
+(
+   49,
+  'Pending',
+  9
+),
+(
+   50,
+  'Delivered',
+  189
+),
+(
+   51,
+  'Pending',
+  91
+),
+(
+   52,
+  'Pending',
+  69
+),
+(
+   53,
+  'Delivered',
+  181
+),
+(
+   54,
+  'Pending',
+  128
+),
+(
+   55,
+  'Delivered',
+  67
+),
+(
+   56,
+  'Pending',
+  35
+),
+(
+   57,
+  'Pending',
+  30
+),
+(
+   58,
+  'Delivered',
+  156
+),
+(
+   59,
+  'Pending',
+  30
+),
+(
+   60,
+  'Delivered',
+  119
+),
+(
+   61,
+  'Pending',
+  68
+),
+(
+   62,
+  'Pending',
+  185
+),
+(
+   63,
+  'Delivered',
+  241
+),
+(
+   64,
+  'Pending',
+  105
+),
+(
+   65,
+  'Delivered',
+  15
+),
+(
+   66,
+  'Pending',
+  32
+),
+(
+   67,
+  'Pending',
+  112
+),
+(
+   68,
+  'Delivered',
+  232
+),
+(
+   69,
+  'Pending',
+  86
+),
+(
+   70,
+  'Delivered',
+  137
+),
+(
+   71,
+  'Pending',
+  195
+),
+(
+   72,
+  'Pending',
+  53
+),
+(
+   73,
+  'Delivered',
+  26
+),
+(
+   74,
+  'Pending',
+  214
+),
+(
+   75,
+  'Delivered',
+  88
+),
+(
+   76,
+  'Pending',
+  219
+),
+(
+   77,
+  'Pending',
+  22
+),
+(
+   78,
+  'Delivered',
+  112
+),
+(
+   79,
+  'Pending',
+  204
+),
+(
+   80,
+  'Delivered',
+  24
+),
+(
+   81,
+  'Pending',
+  49
+),
+(
+   82,
+  'Pending',
+  106
+),
+(
+   83,
+  'Delivered',
+  235
+),
+(
+   84,
+  'Pending',
+  177
+),
+(
+   85,
+  'Delivered',
+  40
+),
+(
+   86,
+  'Pending',
+  27
+),
+(
+   87,
+  'Pending',
+  58
+),
+(
+   88,
+  'Delivered',
+  199
+),
+(
+   89,
+  'Pending',
+  66
+),
+(
+   90,
+  'Delivered',
+  28
+),
+(
+   91,
+  'Pending',
+  3
+),
+(
+   92,
+  'Pending',
+  248
+),
+(
+   93,
+  'Delivered',
+  196
+),
+(
+   94,
+  'Pending',
+  226
+),
+(
+   95,
+  'Delivered',
+  143
+),
+(
+   96,
+  'Pending',
+  86
+),
+(
+   97,
+  'Pending',
+  48
+),
+(
+   98,
+  'Delivered',
+  160
+),
+(
+   99,
+  'Pending',
+  106
+),
+(
+   100,
+  'Delivered',
+  218
+),
+(
+   101,
+  'Pending',
+  228
+),
+(
+   102,
+  'Pending',
+  35
+),
+(
+   103,
+  'Delivered',
+  85
+),
+(
+   104,
+  'Pending',
+  9
+),
+(
+   105,
+  'Delivered',
+  77
+),
+(
+   106,
+  'Pending',
+  70
+),
+(
+   107,
+  'Pending',
+  135
+),
+(
+   108,
+  'Delivered',
+  161
+),
+(
+   109,
+  'Pending',
+  150
+),
+(
+   110,
+  'Delivered',
+  56
+),
+(
+   111,
+  'Pending',
+  234
+),
+(
+   112,
+  'Pending',
+  63
+),
+(
+   113,
+  'Delivered',
+  191
+),
+(
+   114,
+  'Pending',
+  171
+),
+(
+   115,
+  'Delivered',
+  110
+),
+(
+   116,
+  'Pending',
+  234
+),
+(
+   117,
+  'Pending',
+  246
+),
+(
+   118,
+  'Delivered',
+  173
+),
+(
+   119,
+  'Pending',
+  21
+),
+(
+   120,
+  'Delivered',
+  104
+),
+(
+   121,
+  'Pending',
+  216
+),
+(
+   122,
+  'Pending',
+  98
+),
+(
+   123,
+  'Delivered',
+  141
+),
+(
+   124,
+  'Pending',
+  201
+),
+(
+   125,
+  'Delivered',
+  192
+),
+(
+   126,
+  'Pending',
+  91
+),
+(
+   127,
+  'Pending',
+  50
+),
+(
+   128,
+  'Delivered',
+  40
+),
+(
+   129,
+  'Pending',
+  72
+),
+(
+   130,
+  'Delivered',
+  128
+),
+(
+   131,
+  'Pending',
+  90
+),
+(
+   132,
+  'Pending',
+  22
+),
+(
+   133,
+  'Delivered',
+  189
+),
+(
+   134,
+  'Pending',
+  226
+),
+(
+   135,
+  'Delivered',
+  114
+),
+(
+   136,
+  'Pending',
+  90
+),
+(
+   137,
+  'Pending',
+  69
+),
+(
+   138,
+  'Delivered',
+  100
+),
+(
+   139,
+  'Pending',
+  47
+),
+(
+   140,
+  'Delivered',
+  129
+),
+(
+   141,
+  'Pending',
+  26
+),
+(
+   142,
+  'Pending',
+  89
+),
+(
+   143,
+  'Delivered',
+  77
+),
+(
+   144,
+  'Pending',
+  3
+),
+(
+   145,
+  'Delivered',
+  242
+),
+(
+   146,
+  'Pending',
+  35
+),
+(
+   147,
+  'Pending',
+  195
+),
+(
+   148,
+  'Delivered',
+  15
+),
+(
+   149,
+  'Pending',
+  117
+),
+(
+   150,
+  'Delivered',
+  78
+),
+(
+   151,
+  'Pending',
+  106
+),
+(
+   152,
+  'Pending',
+  85
+),
+(
+   153,
+  'Delivered',
+  185
+),
+(
+   154,
+  'Pending',
+  10
+),
+(
+   155,
+  'Delivered',
+  195
+),
+(
+   156,
+  'Pending',
+  30
+),
+(
+   157,
+  'Pending',
+  15
+),
+(
+   158,
+  'Delivered',
+  118
+),
+(
+   159,
+  'Pending',
+  87
+),
+(
+   160,
+  'Delivered',
+  23
+),
+(
+   161,
+  'Pending',
+  128
+),
+(
+   162,
+  'Pending',
+  248
+),
+(
+   163,
+  'Delivered',
+  220
+),
+(
+   164,
+  'Pending',
+  230
+),
+(
+   165,
+  'Delivered',
+  219
+),
+(
+   166,
+  'Pending',
+  189
+),
+(
+   167,
+  'Pending',
+  185
+),
+(
+   168,
+  'Delivered',
+  9
+),
+(
+   169,
+  'Pending',
+  133
+),
+(
+   170,
+  'Delivered',
+  224
+),
+(
+   171,
+  'Pending',
+  215
+),
+(
+   172,
+  'Pending',
+  79
+),
+(
+   173,
+  'Delivered',
+  140
+),
+(
+   174,
+  'Pending',
+  120
+),
+(
+   175,
+  'Delivered',
+  168
+),
+(
+   176,
+  'Pending',
+  47
+),
+(
+   177,
+  'Pending',
+  143
+),
+(
+   178,
+  'Delivered',
+  140
+),
+(
+   179,
+  'Pending',
+  27
+),
+(
+   180,
+  'Delivered',
+  35
+),
+(
+   181,
+  'Pending',
+  194
+),
+(
+   182,
+  'Pending',
+  170
+),
+(
+   183,
+  'Delivered',
+  12
+),
+(
+   184,
+  'Pending',
+  189
+),
+(
+   185,
+  'Delivered',
+  236
+),
+(
+   186,
+  'Pending',
+  103
+),
+(
+   187,
+  'Pending',
+  100
+),
+(
+   188,
+  'Delivered',
+  137
+),
+(
+   189,
+  'Pending',
+  157
+),
+(
+   190,
+  'Delivered',
+  154
+),
+(
+   191,
+  'Pending',
+  158
+),
+(
+   192,
+  'Pending',
+  67
+),
+(
+   193,
+  'Delivered',
+  205
+),
+(
+   194,
+  'Pending',
+  38
+),
+(
+   195,
+  'Delivered',
+  229
+),
+(
+   196,
+  'Pending',
+  151
+),
+(
+   197,
+  'Pending',
+  1
+),
+(
+   198,
+  'Delivered',
+  100
+),
+(
+   199,
+  'Pending',
+  38
+),
+(
+   200,
+  'Delivered',
+  8
+),
+(
+   201,
+  'Pending',
+  209
+),
+(
+   202,
+  'Pending',
+  156
+),
+(
+   203,
+  'Delivered',
+  242
+),
+(
+   204,
+  'Pending',
+  118
+),
+(
+   205,
+  'Delivered',
+  120
+),
+(
+   206,
+  'Pending',
+  20
+),
+(
+   207,
+  'Pending',
+  220
+),
+(
+   208,
+  'Delivered',
+  154
+),
+(
+   209,
+  'Pending',
+  91
+),
+(
+   210,
+  'Delivered',
+  8
+),
+(
+   211,
+  'Pending',
+  125
+),
+(
+   212,
+  'Pending',
+  178
+),
+(
+   213,
+  'Delivered',
+  33
+),
+(
+   214,
+  'Pending',
+  190
+),
+(
+   215,
+  'Delivered',
+  240
+),
+(
+   216,
+  'Pending',
+  50
+),
+(
+   217,
+  'Pending',
+  69
+),
+(
+   218,
+  'Delivered',
+  14
+),
+(
+   219,
+  'Pending',
+  80
+),
+(
+   220,
+  'Delivered',
+  164
+),
+(
+   221,
+  'Pending',
+  204
+),
+(
+   222,
+  'Pending',
+  85
+),
+(
+   223,
+  'Delivered',
+  172
+),
+(
+   224,
+  'Pending',
+  102
+),
+(
+   225,
+  'Delivered',
+  13
+),
+(
+   226,
+  'Pending',
+  97
+),
+(
+   227,
+  'Pending',
+  192
+),
+(
+   228,
+  'Delivered',
+  219
+),
+(
+   229,
+  'Pending',
+  173
+),
+(
+   230,
+  'Delivered',
+  216
+),
+(
+   231,
+  'Pending',
+  216
+),
+(
+   232,
+  'Pending',
+  18
+),
+(
+   233,
+  'Delivered',
+  169
+),
+(
+   234,
+  'Pending',
+  214
+),
+(
+   235,
+  'Delivered',
+  107
+),
+(
+   236,
+  'Pending',
+  188
+),
+(
+   237,
+  'Pending',
+  234
+),
+(
+   238,
+  'Delivered',
+  158
+),
+(
+   239,
+  'Pending',
+  173
+),
+(
+   240,
+  'Delivered',
+  10
+),
+(
+   241,
+  'Pending',
+  22
+),
+(
+   242,
+  'Pending',
+  101
+),
+(
+   243,
+  'Delivered',
+  135
+),
+(
+   244,
+  'Pending',
+  21
+),
+(
+   245,
+  'Delivered',
+  199
+),
+(
+   246,
+  'Pending',
+  171
+),
+(
+   247,
+  'Pending',
+  40
+),
+(
+   248,
+  'Delivered',
+  37
+),
+(
+   249,
+  'Pending',
+  55
+),
+(
+   250,
+  'Delivered',
+  27
+);
