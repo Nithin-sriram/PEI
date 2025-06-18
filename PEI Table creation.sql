@@ -94,5 +94,5 @@ SELECT
     s.customer_id as order_id,
     s.status AS current_status
 FROM Shipping s
--- Filter customer that part of customers_attributes
-WHERE s.customer_ID IN (SELECT customer_id FROM customers_attributes);
+-- Filter orders that part of orders_log
+WHERE s.customer_ID IN (SELECT order_id FROM orders_log);
